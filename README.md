@@ -3,22 +3,27 @@
 Multilingual automatic speech recognition (ASR) with speaker segmentation (SS) / speaker diarization (SD) and word-level timestamps (WLT)
 
 ## Installation
+
 ```shell
 pip install git+https://github.com/urroxyz/whisper.git
 ```
 
 ## Quickstart
+
 ### 1. Import the library
+
 ```py
 from urro_whisper import whisperer, HYPHEN, GREATER_THAN, SPEAKER, PERSON
 ```
 
 ### 2. Set variables
+
 ```py
 audio = "audio.wav" # Make sure this file exists or replace with a valid path
 speaker_delimiter = HYPHEN()
 ```
 ### 3. Create the `whisperer`
+
 ```py
 result = whisperer(
     model="tiny", # Use a valid model size like 'tiny', 'base', 'small', 'medium', 'large', 'large-v2', 'large-v3'
@@ -30,6 +35,7 @@ result = whisperer(
 ```
 
 ### 3. Print results
+
 ```py
 print("\n--- Transcript ---")
 # Access the transcript text using the simplified key "text"
@@ -146,11 +152,13 @@ except Exception as e:
 ```
 
 ## To-Do
+
 - [ ] Regroup word ouput
 - [x] Speaker diarization
 - [ ] Stream audio input
 
 ## Acknowledgements
+
 * [openai-whisper](https://github.com/openai/whisper) by OpenAI
     * mel spectrogram handling
 * [whisper-timestamped](https://github.com/linto-ai/whisper-timestamped) by Linto AI
