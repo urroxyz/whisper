@@ -17,7 +17,7 @@ pip install git+https://github.com/urroxyz/whisper
 ## Introduction
 Yes, Whisper *can* diarize and timestamp! And WHISPER + URRO is here to offer an easy solution therefor.
 
-By modifying the thinking process of the OpenAI model, we can force it to label new speakers with symbols like hyphens (`-`) or greater-thans (`>`), or even with complete labels such as `[SPEAKER 1]` and `[SPEAKER 2]` to keep track of who is speaking and when.
+By modifying the thinking process of the OpenAI model, we can force it to delimit new speakers with symbols like hyphens (`-`) or greater-thans (`>`), or even with complete labels such as `[SPEAKER 1]` and `[SPEAKER 2]` to keep track of who is speaking and when.
 
 ## Quickstart
 
