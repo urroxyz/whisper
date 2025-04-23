@@ -1,6 +1,6 @@
 # Whisper with Urro `ᴡʜɪꜱᴘᴇʀ + ᴜʀʀᴏ`
 
-Multilingual automatic speech recognition (ASR) with new speaker segmentation (NSS) and word-level timestamps (WLT) 
+Multilingual automatic speech recognition (ASR) with speaker segmentation (SS) / speaker diarization (SD) and word-level timestamps (WLT)
 
 ## Installation
 ```shell
@@ -8,28 +8,32 @@ pip install git+https://github.com/urroxyz/whisper.git
 ```
 
 ## Quickstart
-
+### 1. Import the library
 ```py
-import ssl
+from urro_whisper import whisperer, HYPHEN, GREATER_THAN, SPEAKER, PERSON
+```
 
-ssl._create_default_https_context = ssl._create_unverified_context
-
-from urro_whisper import whisperer, HYPHEN, GREATER, DOUBLE_GREATER
-
+### 2. Set variables
+```py
 audio = "audio.wav" # Make sure this file exists or replace with a valid path
-diarization_prefix = DOUBLE_GREATER
-
+speaker_delimiter = HYPHEN()
+```
+### 3. Create the `whisperer`
+```py
 result = whisperer(
     model="tiny", # Use a valid model size like 'tiny', 'base', 'small', 'medium', 'large', 'large-v2', 'large-v3'
     audio=audio,
     language="en",
-    diarization_prefix=diarization_prefix,
+    speaker_delimiter=speaker_delimiter,
     verbose=False, # Set to True for detailed logging
 )
+```
 
+### 3. Print results
+```py
 print("\n--- Transcript ---")
 # Access the transcript text using the simplified key "text"
-texts = result["text"].split(diarization_prefix + " ")
+texts = result["text"].split(speaker_delimiter + " ")
 for _, text in enumerate(texts):
     if text: # Avoid printing empty strings if splitting resulted in them
       print(text)
@@ -143,7 +147,7 @@ except Exception as e:
 
 ## To-Do
 - [ ] Regroup word ouput
-- [ ] Speaker diarization
+- [x] Speaker diarization
 - [ ] Stream audio input
 
 ## Acknowledgements
