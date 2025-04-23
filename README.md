@@ -33,6 +33,13 @@ from urro_whisper import whisperer, HYPHEN, GREATER_THAN, SPEAKER, PERSON
 audio = "audio.wav" # Make sure this file exists or replace with a valid path
 speaker_delimiter = HYPHEN()
 ```
+<p align="center">or, to diarize:</p>
+
+```py
+audio = "audio.wav" # Make sure this file exists or replace with a valid path
+speaker_delimiter = SPEAKER()
+```
+
 ### 3. Create the `whisperer`
 
 ```py
