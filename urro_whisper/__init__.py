@@ -16,4 +16,4 @@ def PERSON(ch: str = "[") -> str:
     return " " + ch + "PERSON 1" + mirror
 
 __license__ = "GPLv3"
-__version__ = "0.1.0"
+__version__ = "0.2.0"
