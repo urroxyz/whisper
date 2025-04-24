@@ -27,11 +27,11 @@ By modifying the thinking process of the OpenAI model, we can force it to delimi
 
 | Size                                          | Parameters | New-speaker segmentation | Speaker diarization | Word-level timestamps |
 |-----------------------------------------------|------------|--------------------------|---------------------|-----------------------|
-| tiny[^link-1] / tiny.en[^link-2]              | 39 M       | ✓                        | x                   | ✓                     |
-| base[^link-3] / base.en[^link-4]              | 74 M       | ✓                        | x                   | ✓                     |
-| small[^link-5] / small.en[^link-6]            | 244 M      | ✓                        | x                   | ✓                     |
-| medium[^link-7] / medium.en[^link-8]          | 769 M      | ✓                        | ✓                   | x                     |
-| large-v3[^link-11]                            | 1550 M   | ✓                          | ✓                   | x                     |
+| tiny[^link-1]<br>tiny.en[^link-2]              | 39 M       | ✓                        | x                   | ✓                     |
+| base[^link-3]<br>base.en[^link-4]              | 74 M       | ✓                        | x                   | ✓                     |
+| small[^link-5]<br>small.en[^link-6]            | 244 M      | ✓                        | x                   | ✓                     |
+| medium[^link-7]<br>medium.en[^link-8]          | 769 M      | ✓                        | ✓                   | x                     |
+| large-v3[^link-11]                            | 1550 M     | ✓                        | ✓                   | x                     |
 | large-v3-turbo[^link-12]                      | 809 M      | ✓                        | x                   | ✓                     |
 
 [^link-1]: https://huggingface.co/onnx-community/whisper-tiny_timestamped
@@ -48,7 +48,7 @@ By modifying the thinking process of the OpenAI model, we can force it to delimi
 ### Third-party
 | Model                                 | Parameters | New-speaker segmentation | Speaker diarization | Word-level timestamps |
 |---------------------------------------|------------|--------------------------|---------------------|-----------------------|
-| jordand/whisper-d-v1a[^link-13]       | 1550 M     | ✓                        | ✓                   | x                     |
+| jordand/<br>whisper-d-v1a[^link-13]       | 1550 M     | ✓                        | ✓                   | x                     |
 
 [^link-13]: [onnx-community/whisper-d-v1a-ONNX](https://huggingface.co/onnx-community/whisper-d-v1a-ONNX)
 
@@ -220,3 +220,5 @@ except Exception as e:
     * mel spectrogram handling
 * [whisper-timestamped](https://github.com/linto-ai/whisper-timestamped) by Linto AI
     * word-level timestamp extraction
+ 
+## Notes and links
