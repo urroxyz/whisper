@@ -22,6 +22,36 @@ By modifying the thinking process of the OpenAI model, we can force it to delimi
 [^acknowledgement-1]: Unique to WHISPER + URRO.
 [^acknowledgement-2]: As implemented in explicitly `whisper-timestamped`, alongside other libraries, such as `openai-whisper`.
 
+## Supported models
+### Official
+
+| Size                                          | Parameters | New-speaker segmentation | Speaker diarization | Word-level timestamps |
+|-----------------------------------------------|------------|--------------------------|---------------------|-----------------------|
+| tiny[^link-1] / tiny.en[^link-2]              | 39 M       | ✓                        | x                   | ✓                     |
+| base[^link-3] / base.en[^link-4]              | 74 M       | ✓                        | x                   | ✓                     |
+| small[^link-5] / small.en[^link-6]            | 244 M      | ✓                        | x                   | ✓                     |
+| medium[^link-7] / medium.en[^link-8]          | 769 M      | ✓                        | ✓                   | x                     |
+| large-v3[^link-11]                            | 1550 M   | ✓                          | ✓                   | x                     |
+| large-v3-turbo[^link-12]                      | 809 M      | ✓                        | x                   | ✓                     |
+
+[^link-1]: https://huggingface.co/onnx-community/whisper-tiny_timestamped
+[^link-2]: https://huggingface.co/onnx-community/whisper-tiny.en_timestamped
+[^link-3]: https://huggingface.co/onnx-community/whisper-base_timestamped
+[^link-4]: https://huggingface.co/onnx-community/whisper-base.en_timestamped
+[^link-5]: https://huggingface.co/onnx-community/whisper-small_timestamped
+[^link-6]: https://huggingface.co/onnx-community/whisper-small.en_timestamped
+[^link-7]: https://huggingface.co/onnx-community/whisper-medium-ONNX
+[^link-8]: https://huggingface.co/onnx-community/whisper-medium.en-ONNX  
+[^link-11]: https://huggingface.co/onnx-community/whisper-large-v3-ONNX
+[^link-12]: https://huggingface.co/onnx-community/whisper-large-v3-turbo_timestamped
+
+### Third-party
+| Model                                 | Parameters | New-speaker segmentation | Speaker diarization | Word-level timestamps |
+|---------------------------------------|------------|--------------------------|---------------------|-----------------------|
+| jordand/whisper-d-v1a[^link-13]       | 1550 M     | ✓                        | ✓                   | x                     |
+
+[^link-13]: [onnx-community/whisper-d-v1a-ONNX](https://huggingface.co/onnx-community/whisper-d-v1a-ONNX)
+
 ## Quickstart
 
 ### 1. Import the library
