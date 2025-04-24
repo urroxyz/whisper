@@ -178,6 +178,7 @@ except Exception as e:
 - [x] Speaker diarization
 - [ ] User prompting
 - [ ] Stream text output
+- [ ] Align existing transcript
 - [ ] Stream audio input
 
 ## Acknowledgements
