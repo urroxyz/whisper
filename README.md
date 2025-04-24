@@ -42,6 +42,9 @@ speaker_delimiter = SPEAKER()
 
 ### 3. Create the `whisperer`
 
+> *Speaker diarization with `SPEAKER()` and `PERSON()` is only supported by model sizes `medium`, `large`, `large-v2`, and `large-v3`.*
+> *Smaller models, including `large-v3-turbo`, may produce unpredictable results.*
+
 ```py
 result = whisperer(
     model="tiny", # Use a valid model size like 'tiny', 'base', 'small', 'medium', 'large', 'large-v2', 'large-v3'
