@@ -176,6 +176,8 @@ except Exception as e:
 
 - [ ] Regroup word ouput
 - [x] Speaker diarization
+- [ ] User prompting
+- [ ] Stream text output
 - [ ] Stream audio input
 
 ## Acknowledgements
