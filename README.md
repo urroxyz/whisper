@@ -46,9 +46,9 @@ By modifying the thinking process of the OpenAI model, we can force it to delimi
 [^link-12]: https://huggingface.co/onnx-community/whisper-large-v3-turbo_timestamped
 
 ### Third-party
-| Author           | Model                   | Parameters | New-speaker segmentation | Speaker diarization | Word-level timestamps |
-|------------------|-------------------------|------------|--------------------------|---------------------|-----------------------|
-| jordand          | whisper-d-v1a[^link-13] | 1550 M     | ✓                        | ✓                   | x                     |
+| Model                   | Parameters | New-speaker segmentation | Speaker diarization | Word-level timestamps |
+|-------------------------|------------|--------------------------|---------------------|-----------------------|
+| whisper-d-v1a[^link-13] | 1550 M     | ✓                        | ✓                   | x                     |
 
 [^link-13]: [onnx-community/whisper-d-v1a-ONNX](https://huggingface.co/onnx-community/whisper-d-v1a-ONNX)
 
