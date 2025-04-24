@@ -15,9 +15,12 @@ pip install git+https://github.com/urroxyz/whisper
 ```
 
 ## Introduction
-Yes, Whisper *can* diarize and timestamp! And WHISPER + URRO is here to offer an easy solution therefor.
+Yes, Whisper *can* segment speakers and timestamp words! And WHISPER + URRO is here to offer an easy solution therefor.
 
-By modifying the thinking process of the OpenAI model, we can force it to delimit new speakers with symbols like hyphens (`-`) or greater-thans (`>`), or even with complete labels such as `[SPEAKER 1]` and `[SPEAKER 2]` to keep track of who is speaking and when.
+By modifying the thinking process of the OpenAI model, we can force it to delimit new speakers with symbols like hyphens (`-`) or greater-thans (`>`), or even with complete labels such as `[SPEAKER 1]` and `[SPEAKER 2]` to keep track of who is speaking and when.[^acknowledgement-1] By extracting cross-attentions and processesing them with dynamic-time warping, we can reconstruct timestamps on the word level rather than relying on occasional generated time tokens.[^acknowledgement-2]
+
+[^acknowledgement-1]: Unique to WHISPER + URRO.
+[^acknowledgement-2]: As implemented in explicitly `whisper-timestamped`, alongside other librarys such as `openai-whisper`.
 
 ## Quickstart
 
