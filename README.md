@@ -20,7 +20,7 @@ Yes, Whisper *can* segment speakers and timestamp words! And WHISPER + URRO 
 By modifying the thinking process of the OpenAI model, we can force it to delimit new speakers with symbols like hyphens (`-`) or greater-thans (`>`), or even with complete labels such as `[SPEAKER 1]` and `[SPEAKER 2]` to keep track of who is speaking and when.[^acknowledgement-1] By extracting cross-attentions and processesing them with dynamic-time warping, we can reconstruct timestamps on the word level rather than relying on occasional generated time tokens.[^acknowledgement-2]
 
 [^acknowledgement-1]: Unique to WHISPER + URRO.
-[^acknowledgement-2]: As implemented in explicitly `whisper-timestamped`, alongside other libraries, such as `openai-whisper`.
+[^acknowledgement-2]: As explicitly implemented in `whisper-timestamped`, alongside other libraries, such as `openai-whisper`.
 
 ## Supported models
 ### Official
@@ -46,9 +46,9 @@ By modifying the thinking process of the OpenAI model, we can force it to delimi
 [^link-12]: https://huggingface.co/onnx-community/whisper-large-v3-turbo_timestamped
 
 ### Third-party
-| Model                                 | Parameters | New-speaker segmentation | Speaker diarization | Word-level timestamps |
-|---------------------------------------|------------|--------------------------|---------------------|-----------------------|
-| jordand/<br>whisper-d-v1a[^link-13]       | 1550 M     | ✓                        | ✓                   | x                     |
+| Author           | Model                   | Parameters | New-speaker segmentation | Speaker diarization | Word-level timestamps |
+|------------------|-------------------------|------------|--------------------------|---------------------|-----------------------|
+| jordand          | whisper-d-v1a[^link-13] | 1550 M     | ✓                        | ✓                   | x                     |
 
 [^link-13]: [onnx-community/whisper-d-v1a-ONNX](https://huggingface.co/onnx-community/whisper-d-v1a-ONNX)
 
