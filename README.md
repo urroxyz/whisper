@@ -6,7 +6,7 @@ Multilingual automatic speech recognition (ASR) with speaker segmentation (SS) /
 
 ### Latest
 ```shell
-pip install git+https://github.com/urroxyz/whisper@v0.2.0
+pip install git+https://github.com/urroxyz/whisper@v0.3.0
 ```
 
 ### Development
