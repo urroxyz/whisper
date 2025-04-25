@@ -25,14 +25,14 @@ By modifying the thinking process of the OpenAI model, we can force it to delimi
 ## Supported models
 ### Official
 
-| Size                                          | Parameters | New-speaker segmentation | Speaker diarization | Word-level timestamps |
-|-----------------------------------------------|------------|--------------------------|---------------------|-----------------------|
+| Size                                           | Parameters | New-speaker segmentation | Speaker diarization | Word-level timestamps |
+|------------------------------------------------|------------|--------------------------|---------------------|-----------------------|
 | tiny[^link-1]<br>tiny.en[^link-2]              | 39 M       | ✓                        | x                   | ✓                     |
 | base[^link-3]<br>base.en[^link-4]              | 74 M       | ✓                        | x                   | ✓                     |
 | small[^link-5]<br>small.en[^link-6]            | 244 M      | ✓                        | x                   | ✓                     |
 | medium[^link-7]<br>medium.en[^link-8]          | 769 M      | ✓                        | ✓                   | x                     |
-| large-v3[^link-11]                            | 1550 M     | ✓                        | ✓                   | x                     |
-| large-v3-turbo[^link-12]                      | 809 M      | ✓                        | x                   | ✓                     |
+| large-v3[^link-11]                             | 1550 M     | ✓                        | ✓                   | x                     |
+| large-v3-turbo[^link-12]                       | 809 M      | ✓                        | x                   | ✓                     |
 
 [^link-1]: https://huggingface.co/onnx-community/whisper-tiny_timestamped
 [^link-2]: https://huggingface.co/onnx-community/whisper-tiny.en_timestamped
@@ -235,6 +235,30 @@ except Exception as e:
     print(f"\nAn error occurred during HTML table generation or fallback: {e}")
     import traceback
     traceback.print_exc()
+```
+
+## Stream
+```py
+print("\n--- transcript stream ---")
+tokens = whisperer(
+    model=model,
+    audio=audio,
+    language=language,
+    delimiter=delimiter(),
+    prompt=prompt(speakers, language),
+    stream=True,
+    verbose=False,
+)
+
+i = 0
+for token in tokens:
+    if i == 0:
+        print(delimiter() + token, end="", flush=True)
+    else: 
+        print(token, end="", flush=True)
+    i += 1
+
+print("\n--- end of stream ---")
 ```
 
 ## To-Do
