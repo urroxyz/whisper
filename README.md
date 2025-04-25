@@ -66,45 +66,67 @@ By modifying the thinking process of the OpenAI model, we can force it to delimi
 ### 1. Import the library
 
 ```py
-from urro_whisper import whisperer, HYPHEN, GREATER_THAN, SPEAKER, PERSON
+from urro_whisper import whisperer
+from urro_whisper.delimiters import HYPHEN, GREATER_THAN, SPEAKER, PERSON
+from urro_whisper.prompts import SPEAKERS, PERSONS
 ```
 
 ### 2. Set variables
 
-```py
-audio = "audio.wav" # Make sure this file exists or replace with a valid path
-speaker_delimiter = HYPHEN()
-```
-<p align="center">or, to diarize:</p>
+<p align="center">to segment speakers:</p>
 
 ```py
-audio = "audio.wav" # Make sure this file exists or replace with a valid path
-speaker_delimiter = SPEAKER()
+model = "tiny"
+audio = "audio.wav"
+language = "en"
+delimiter = HYPHEN
+```
+<p align="center">to label speakers:</p>
+
+```py
+model = "medium"
+audio = "audio.wav"
+language = "en"
+prompt = SPEAKERS
+delimiter = SPEAKER
+speakers = 3
 ```
 
 ### 3. Create the `whisperer`
 
-> *Speaker diarization with `SPEAKER()` and `PERSON()` is only supported by model sizes `medium`, `large`, `large-v2`, and `large-v3`.*
-> *Smaller models, including `large-v3-turbo`, may produce unpredictable results.*
+<p align="center">to segment speakers:</p>
 
 ```py
 result = whisperer(
-    model="tiny", # Use a valid model size like 'tiny', 'base', 'small', 'medium', 'large', 'large-v2', 'large-v3'
+    model=model,
     audio=audio,
-    language="en",
-    speaker_delimiter=speaker_delimiter,
-    verbose=False, # Set to True for detailed logging
+    language=language,
+    delimiter=delimiter(),
+    verbose=False,
+)
+```
+<p align="center">to label speakers:</p>
+
+```py
+result = whisperer(
+    model=model,
+    audio=audio,
+    language=language,
+    prompt=prompt(speakers, language),
+    delimiter=delimiter(),
+    verbose=False,
 )
 ```
 
 ### 3. Print results
 
 ```py
+import re
+
 print("\n--- Transcript ---")
-# Access the transcript text using the simplified key "text"
-texts = result["text"].split(speaker_delimiter + " ")
+texts = re.split(delimiter.regex, result["text"])
 for _, text in enumerate(texts):
-    if text: # Avoid printing empty strings if splitting resulted in them
+    if len(text) > 0:
       print(text)
 
 def format_timestamp(seconds):
@@ -141,14 +163,12 @@ try:
         audio_playback = audio_original.astype(np.float32)
 
     html_rows = []
-    html_rows.append("<tr><th>Timestamp</th><th>Text</th><th>Audio</th></tr>") # Changed Word -> Text
+    html_rows.append("<tr><th>Timestamp</th><th>Text</th><th>Audio</th></tr>")
 
-    # Access the word timestamps using the simplified key "words"
-    # Access the word text using the simplified key "text" within each item
     for idx, word_info in enumerate(result["words"]):
         start_time = word_info['start']
         end_time = word_info['end']
-        word_text = word_info['text'] # Changed 'word' -> 'text'
+        word_text = word_info['text']
         ts_str = f"[{format_timestamp(start_time)} --> {format_timestamp(end_time)}]"
         audio_player_html = "N/A"
         if (
@@ -162,13 +182,12 @@ try:
             if end_sample > start_sample:
                 audio_segment = audio_playback[start_sample:end_sample]
 
-                # Normalize segment for playback if needed (prevents clipping in Audio widget)
                 max_abs = np.max(np.abs(audio_segment))
                 if max_abs > 1.0:
                     audio_segment = audio_segment / max_abs
                 elif max_abs == 0:
-                     # Avoid division by zero for silent segments
-                     pass # audio_segment is already all zeros
+                    
+                     pass
 
                 try:
                     audio_obj = Audio(data=audio_segment, rate=target_sample_rate, autoplay=False)
@@ -194,14 +213,12 @@ except ImportError as e:
     print(f"\nSkipping HTML table generation due to missing libraries: {e}")
     print("You might need to install: pip install ipython soundfile librosa")
     print("\n--- Word-level Timestamps (Text Fallback) ---")
-    # Fallback print using simplified names
-    # Access the word timestamps using the simplified key "words"
-    # Access the word text using the simplified key "text" within each item
+   
     if "words" in result:
         for word_info in result["words"]:
             start = word_info['start']
             end = word_info['end']
-            text_ = word_info['text'] # Changed 'word' -> 'text'
+            text_ = word_info['text']
             print(f"[{format_timestamp(start)} --> {format_timestamp(end)}]\t{text_}")
     else:
         print("No word timestamp information available in results.")
@@ -218,8 +235,8 @@ except Exception as e:
 
 - [ ] Regroup word ouput
 - [x] Speaker diarization
-- [ ] User prompting
-- [ ] Stream text output
+- [x] User prompting
+- [x] Stream text output
 - [ ] Align existing transcript
 - [ ] Stream audio input
 
