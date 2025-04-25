@@ -30,8 +30,8 @@ By modifying the thinking process of the OpenAI model, we can force it to delimi
 | tiny[^link-1]<br>tiny.en[^link-2]              | 39 M       | ✓                        | x                   | ✓                     |
 | base[^link-3]<br>base.en[^link-4]              | 74 M       | ✓                        | x                   | ✓                     |
 | small[^link-5]<br>small.en[^link-6]            | 244 M      | ✓                        | ✓                   | ✓                     |
-| medium[^link-7]<br>medium.en[^link-8]          | 769 M      | ✓                        | ✓                   | x                     |
-| large-v3[^link-11]                             | 1550 M     | ✓                        | ✓                   | x                     |
+| medium[^link-7]<br>medium.en[^link-8]          | 769 M      | ✓                        | ✓                   | ✓                     |
+| large-v3[^link-11]                             | 1550 M     | ✓                        | ✓                   | ✓                     |
 | large-v3-turbo[^link-12]                       | 809 M      | ✓                        | x                   | ✓                     |
 
 [^link-1]: https://huggingface.co/onnx-community/whisper-tiny_timestamped
