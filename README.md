@@ -40,8 +40,8 @@ By modifying the thinking process of the OpenAI model, we can force it to delimi
 [^link-4]: https://huggingface.co/onnx-community/whisper-base.en_timestamped
 [^link-5]: https://huggingface.co/onnx-community/whisper-small_timestamped
 [^link-6]: https://huggingface.co/onnx-community/whisper-small.en_timestamped
-[^link-7]: https://huggingface.co/onnx-community/whisper-medium-ONNX
-[^link-8]: https://huggingface.co/onnx-community/whisper-medium.en-ONNX  
+[^link-7]: https://huggingface.co/urroxyz/whisper-medium_timestamped
+[^link-8]: https://huggingface.co/urroxyz/whisper-medium.en_timestamped
 [^link-11]: https://huggingface.co/onnx-community/whisper-large-v3-ONNX
 [^link-12]: https://huggingface.co/onnx-community/whisper-large-v3-turbo_timestamped
 
