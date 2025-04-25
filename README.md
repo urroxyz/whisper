@@ -53,6 +53,12 @@ By modifying the thinking process of the OpenAI model, we can force it to delimi
 [^link-13]: [onnx-community/whisper-d-v1a-ONNX](https://huggingface.co/onnx-community/whisper-d-v1a-ONNX)
 
 ## Comparison
+<details>
+    
+https://github.com/user-attachments/assets/6da5199c-0eaa-4e39-b511-61a52b4b48f9
+    
+</details>
+
 | Source                                                                                                                             | Transcript                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Ground truth**                                                                                                                 | [SPEAKER 1] Down in front. <br><br> [SPEAKER 2] Hey, sit down, that’s wrong of you. <br><br> [SPEAKER 1] The little lady who is to become Mrs. Harvey Yates over my dead body. <br><br> [SPEAKER 3] I know I have the sincere wishes of all my friends… <br><br> and can only tell you how much I appreciate it. <br><br> I think I can honestly say this is the happiest moment of my life. <br><br> Look what I have here. <br><br> It’s a little engagement present just given me by Mr. Yates. |
