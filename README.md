@@ -13,6 +13,7 @@ pip install git+https://github.com/urroxyz/whisper@v0.3.0
 <details>
 Latest update: The `whisperer`'s `transcript` parameter allows you to align existing transcripts!
 </details>
+
 ```shell
 pip install git+https://github.com/urroxyz/whisper
 ```
