@@ -11,6 +11,7 @@ pip install git+https://github.com/urroxyz/whisper@v0.3.0
 
 ### Development
 <details>
+    
 Latest update: The `whisperer`'s `transcript` parameter allows you to align existing transcripts!
 </details>
 
